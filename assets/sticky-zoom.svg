@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="20.2222" height="20.2222" viewBox="0 0 20.2222 20.2222" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Sticky controls/Zoom" clip-path="url(#clip0_0_304)">
+<path id="Path" d="M17.3333 0H11.5556V2.88889H8.66667V5.77778H5.77778V8.66667H2.88889V11.5556H0V17.3333H17.3333V0Z" fill="#FFFFB3"/>
+<path id="Path_2" d="M20.2222 0H17.3333V17.3333H0V20.2222H20.2222V0Z" fill="#FFB300"/>
+<g id="Path_3">
+<path d="M14.4444 5.77778H11.5556V2.88889H14.4444V5.77778Z" fill="#FFB300"/>
+<path d="M8.66667 8.66667V5.77778H11.5556V8.66667H8.66667Z" fill="#FFB300"/>
+<path d="M5.77778 11.5556H8.66667V8.66667H5.77778V11.5556Z" fill="#FFB300"/>
+<path d="M5.77778 11.5556V14.4444H2.88889V11.5556H5.77778Z" fill="#FFB300"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_304">
+<rect width="20.2222" height="20.2222" fill="white"/>
+</clipPath>
+</defs>
+</svg>

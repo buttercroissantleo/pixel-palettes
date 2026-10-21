@@ -185,3 +185,75 @@ button:focus-visible { outline: 4px solid #072044; outline-offset: 4px; box-shad
   .homepage { padding-top: 2.5rem; }
   .introduction { margin-top: 2rem; margin-bottom: 1.5rem; }
 }
+
+/* Updated Figma desktop: pink lava, sticky note and utility window. */
+body { background-color: #ffbceb; background-attachment: fixed; }
+.homepage { padding-top: 5.625rem; padding-bottom: 4rem; min-height: calc(100vh - 76px); text-align: left; }
+.desktop-items { display: grid; grid-template-columns: 26.33% 44.01% 29.66%; align-items: start; max-width: 1143px; margin: 3rem auto 0; }
+.folder-button { display: flex; flex-direction: column; align-items: center; justify-self: start; max-width: 100%; border: 0; padding: 0; background: transparent; color: #000; cursor: pointer; font: 2.7rem/.85 FindersKeepers, VT323, monospace; }
+.folder-button img { display: block; width: 83.728px; height: 83.728px; image-rendering: pixelated; }
+.folder-button span { background: white; padding: .1rem .4rem .3rem; overflow-wrap: anywhere; }
+.folder-button:hover span { color: #fff; background: #111; }
+.sticky-note { position: relative; width: 364px; max-width: calc(100% - 1.5rem); margin-top: 5.875rem; border: 2.889px solid #ffda00; background: #ffffb3; color: #000; min-height: 244px; }
+.sticky-titlebar { height: 26px; padding: 0 11.56px; background: url("assets/sticky-pattern.png") left top / 5.778px 5.778px repeat; display: flex; align-items: center; justify-content: space-between; }
+.sticky-titlebar img { width: 20.222px; height: 20.222px; }
+.sticky-note p { margin: 0; padding: 0 .9rem 2.3rem; font: 2.97875rem/.75 FindersKeepers, VT323, monospace; overflow-wrap: anywhere; }
+.sticky-resize { position: absolute; bottom: -2px; right: -2px; width: 23.111px; height: 23.111px; }
+.exhibition-window { border: 1.901px solid #000; background: #fff; box-shadow: 1.901px 1.901px #000; min-width: 0; min-height: 198px; }
+.utility-titlebar { height: 22.81px; padding: 2px 11.41px; border-bottom: 1.901px solid #000; box-shadow: inset 0 0 0 2px #b3b3da; background: url("assets/window-pattern.png") 3px 3px / 3.802px 3.802px repeat; display: flex; justify-content: space-between; align-items: center; }
+.utility-titlebar img { width: 13.306px; height: 13.306px; background: #f3f3f3; }
+.utility-titlebar img:last-child { width: 20.91px; height: 20.91px; }
+.utility-content { padding: 1.1rem 1.25rem 1.8rem; }
+.utility-content p { font: 3.1958rem/.75 FindersKeepers, VT323, monospace; margin: 0 0 .7rem; overflow-wrap: anywhere; }
+.utility-content .mac-button { font-size: 3.16rem; line-height: .75; min-width: 7.4rem; padding: .1rem 1rem .3rem; max-width: 100%; overflow-wrap: anywhere; }
+#confetti-canvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 4; pointer-events: none; }
+html.high-contrast .sticky-note { border-color: #000; background: #fff; }
+[hidden] { display: none !important; }
+@media (max-width: 1100px) {
+ .homepage { padding-top: 3rem; }
+ .desktop-items { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 2rem; }
+ .folder-button { grid-column: 1 / -1; justify-self: center; }
+ .sticky-note { margin-top: 0; width: 100%; max-width: none; }
+}
+@media (max-width: 720px) {
+ .homepage { padding: 2rem 1rem 3rem; }
+ .desktop-items { grid-template-columns: minmax(0,1fr); max-width: 364px; gap: 2rem; margin-top: 2rem; }
+ .sticky-note p { font-size: 2.6rem; line-height: .85; }
+ .utility-content p { font-size: 2.7rem; line-height: .85; }
+ .accessibility-controls { justify-content: center; }
+}
+@media (forced-colors: active) { .sticky-note, .exhibition-window { border-color: CanvasText; } button:focus-visible { outline-color: Highlight; } }
+
+/* Latest Figma collage. Decorative assets never intercept controls. */
+.homepage { position: relative; max-width: 1440px; min-height: 1024px; }
+.desktop-art { position: absolute; inset: 0; height: 1024px; overflow: hidden; pointer-events: none; }
+.deco { position: absolute; display: block; height: auto; object-fit: contain; }
+.fish-top { left: 84.668%; top: 5.009%; width: 7.832%; transform: translate(-50%,-50%) rotate(-155.48deg) scaleY(-1); }
+.classic-mac { left: 91.713%; top: 24.267%; width: 10.069%; transform: translate(-50%,-50%) rotate(168.77deg) scaleY(-1); }
+.imac { left: 90.004%; top: 79.024%; width: 18.818%; transform: translate(-50%,-50%) rotate(20.72deg); }
+.ibook { left: 8.806%; top: 11.767%; width: 12.710%; transform: translate(-50%,-50%) rotate(15.91deg); }
+.performa { left: 14.694%; top: 79.263%; width: 28.542%; transform: translate(-50%,-50%) rotate(-26.11deg); }
+.cat { left: 66.600%; top: 89.750%; width: 8.452%; transform: translate(-50%,-50%) rotate(21.06deg); }
+.fish-left { left: 6.883%; top: 48.585%; width: 7.708%; transform: translate(-50%,-50%) rotate(24.52deg); }
+.duck { left: 23.125%; top: 90.625%; width: 5.556%; transform: translate(-50%,-50%); }
+.utility-content .mac-button { background: #d9ffef; font-size: 4.108rem; min-width: 9.65rem; min-height: 3.22rem; border-width: 3px; border-radius: 11px; }
+.utility-content .mac-button:hover { background: #b9f6dc; }
+/* Keep interactive panels above decorations when text grows. */
+.mac-window, .desktop-items { position: relative; z-index: 1; }
+@media (min-width: 1101px) {
+ .folder-button { margin-left: 2.6rem; margin-top: -.45rem; }
+}
+@media (max-width: 1100px) {
+ .homepage { min-height: calc(100vh - 76px); }
+ .desktop-art { position: relative; inset: auto; height: auto; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); align-items: center; justify-items: center; gap: 2rem; padding: 2rem 1rem; margin: 2rem auto 0; max-width: 800px; }
+ .deco { position: static; width: 85%; max-height: 140px; transform: none; }
+ .fish-top { transform: scaleX(-1); }
+ .performa { width: 100%; }
+ .cat, .duck { width: 60%; }
+}
+@media (max-width: 480px) {
+ .desktop-art { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; }
+}
+html.high-contrast .desktop-art { display: none; }
+.utility-content .mac-button { min-width: min(9.65rem, 100%); line-height: .65; }
+.utility-content { padding-bottom: 1rem; }

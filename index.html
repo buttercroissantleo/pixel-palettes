@@ -10,15 +10,10 @@
   <script src="assets/moving-gradient.js" defer></script>
   <script src="script.js" defer></script>
 </head>
-<body>
+<body class="home">
   <canvas id="moving-background" aria-hidden="true"></canvas>
+  <canvas id="confetti-canvas" aria-hidden="true" hidden></canvas>
   <a class="skip-link" href="#main">Skip to main content</a>
-  <!-- Decorative Macintosh menu: deliberately not navigation or controls. -->
-  <div class="menu-bar" aria-hidden="true">
-    <img class="apple" src="assets/apple.svg" alt="">
-    <span>File</span><span>Edit</span><span>View</span><span>Label</span><span>Special</span>
-    <span class="system-icons"><img src="assets/help.svg" alt=""><img class="finder" src="assets/finder.svg" alt=""></span>
-  </div>
   <main id="main" class="homepage" tabindex="-1">
     <header class="mac-window">
       <div class="window-inner">
@@ -27,12 +22,39 @@
         <p class="version">Version 1.0</p>
       </div>
     </header>
-    <p class="introduction"><span>Explore four decades of experimentation, creativity, and art made with computers @ Scripps College.</span></p>
-    <p class="enter-prompt">Click ENTER to view exhibition</p>
-    <a class="mac-button" href="exhibition.html">Enter</a>
+    <div class="desktop-items">
+      <button id="confetti-button" class="folder-button" type="button" aria-describedby="confetti-help" hidden>
+        <img src="assets/confetti-folder.svg" width="84" height="84" alt="">
+        <span>Confetti folder</span>
+      </button>
+      <p id="confetti-help" class="visually-hidden">Click to make confetti fall. Motion must be enabled.</p>
+      <aside class="sticky-note" aria-label="About the exhibition">
+        <div class="sticky-titlebar" aria-hidden="true"><img src="assets/sticky-close.svg" alt=""><img src="assets/sticky-zoom.svg" alt=""></div>
+        <p>Explore four decades of experimentation, creativity, and art made with computers @ Scripps College !</p>
+        <img class="sticky-resize" src="assets/sticky-resize.svg" alt="">
+      </aside>
+      <section class="exhibition-window" aria-label="Visit the exhibition">
+        <div class="utility-titlebar" aria-hidden="true"><img src="assets/window-close.svg" alt=""><img src="assets/window-zoom.svg" alt=""></div>
+        <div class="utility-content">
+          <p>Click below to view the exhibition</p>
+          <a class="mac-button" href="exhibition.html">Enter</a>
+        </div>
+      </section>
+    </div>
+    <div class="desktop-art" aria-hidden="true">
+      <img class="deco fish-top" src="assets/goldfish.png" alt="">
+      <img class="deco classic-mac" src="assets/macintosh-128k.png" alt="">
+      <img class="deco imac" src="assets/imac.png" alt="">
+      <img class="deco ibook" src="assets/ibook.png" alt="">
+      <img class="deco performa" src="assets/performa.png" alt="">
+      <img class="deco cat" src="assets/cat.png" alt="">
+      <img class="deco fish-left" src="assets/goldfish.png" alt="">
+      <img class="deco duck" src="assets/duck.png" alt="">
+    </div>
+    <p id="confetti-status" class="visually-hidden" role="status"></p>
   </main>
   <footer class="accessibility-controls" aria-label="Display settings" hidden>
-    <button id="motion-toggle" class="motion-toggle" type="button" hidden>Pause all motion</button>
+    <button id="motion-toggle" class="motion-toggle" type="button" hidden>Stop motion</button>
     <button id="accessibility-toggle" type="button" aria-pressed="false" aria-describedby="accessibility-help">Accessibility mode</button>
     <span id="accessibility-help" class="visually-hidden">Higher contrast and no movement. Your preference is saved on this browser.</span>
   </footer>

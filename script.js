@@ -10,12 +10,14 @@
   let highContrast = read('pixel-palettes-contrast') === 'true';
   let paused = highContrast || preference.matches || read('pixel-palettes-paused') === 'true';
   let refreshMotion = () => {};
+  let stopConfetti = () => {};
   function updateSettings() {
     root.classList.toggle('high-contrast', highContrast);
     root.classList.toggle('motion-paused', paused);
     accessibility.setAttribute('aria-pressed', String(highContrast));
     toggle.disabled = highContrast;
-    toggle.textContent = highContrast ? 'Motion paused' : paused ? 'Resume motion' : 'Pause all motion';
+    toggle.textContent = highContrast ? 'Motion paused' : paused ? 'Resume motion' : 'Stop motion';
+    if (paused) stopConfetti();
     refreshMotion();
   }
   accessibility.addEventListener('click', () => {
@@ -34,6 +36,67 @@
     paused = highContrast || preference.matches || read('pixel-palettes-paused') === 'true';
     updateSettings();
   });
+  // One bounded confetti shower at a time; no external animation library.
+  const folder = document.querySelector('#confetti-button');
+  const confetti = document.querySelector('#confetti-canvas');
+  const status = document.querySelector('#confetti-status');
+  if (folder && confetti) {
+    const ctx = confetti.getContext('2d');
+    let animation = 0;
+    let pieces = [];
+    let last = 0;
+    let age = 0;
+    stopConfetti = () => {
+      cancelAnimationFrame(animation);
+      pieces = [];
+      confetti.hidden = true;
+      confetti.dataset.active = 'false';
+    };
+    function fall(now) {
+      if (paused || highContrast || document.hidden) { stopConfetti(); return; }
+      const dt = Math.min((now - last) / 1000, .04);
+      last = now;
+      age += dt;
+      const width = innerWidth;
+      const height = innerHeight;
+      const scale = Math.min(devicePixelRatio || 1, 2);
+      if (confetti.width !== Math.round(width * scale) || confetti.height !== Math.round(height * scale)) {
+        confetti.width = Math.round(width * scale); confetti.height = Math.round(height * scale);
+      }
+      ctx.setTransform(scale, 0, 0, scale, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+      for (const piece of pieces) {
+        piece.y += piece.speed * dt;
+        piece.angle += piece.spin * dt;
+        const x = piece.x * width + Math.sin(age * 2 + piece.phase) * 35;
+        ctx.save(); ctx.translate(x, piece.y * height); ctx.rotate(piece.angle);
+        ctx.fillStyle = piece.color; ctx.fillRect(-4, -6, 8, 12); ctx.restore();
+      }
+      if (age > 5) { stopConfetti(); return; }
+      animation = requestAnimationFrame(fall);
+    }
+    if (ctx) {
+      folder.hidden = false;
+      toggle.hidden = false;
+      folder.addEventListener('click', () => {
+        if (paused || highContrast || preference.matches) {
+          status.textContent = 'Confetti is off while motion is stopped or reduced motion is enabled.';
+          return;
+        }
+        stopConfetti();
+        const colors = ['#ff347e', '#ffda00', '#7c4dff', '#19cfb1', '#ffffff', '#339dff'];
+        pieces = Array.from({ length: innerWidth < 600 ? 70 : 130 }, () => ({
+          x: Math.random(), y: -Math.random() * .8, speed: .4 + Math.random() * .25,
+          angle: Math.random() * Math.PI, spin: Math.random() * 6 - 3,
+          phase: Math.random() * Math.PI * 2, color: colors[Math.floor(Math.random() * colors.length)]
+        }));
+        age = 0; last = performance.now(); confetti.hidden = false; confetti.dataset.active = 'true';
+        status.textContent = 'Confetti!';
+        animation = requestAnimationFrame(fall);
+      });
+      document.addEventListener('visibilitychange', () => { if (document.hidden) stopConfetti(); });
+    }
+  }
   document.querySelector('.accessibility-controls').hidden = false;
   updateSettings();
   // Contrast controls work even on browsers without WebGPU or on static pages.
@@ -48,7 +111,7 @@
     stopped = true;
     cancelAnimationFrame(request);
     canvas.hidden = true;
-    toggle.hidden = true;
+    toggle.hidden = !folder;
     canvas.dataset.renderer = 'fallback';
   };
   try {
@@ -60,16 +123,18 @@
     const format = navigator.gpu.getPreferredCanvasFormat();
     context.configure({ device, format, alphaMode: 'opaque' });
     const frame = { state: {}, time: 0, params: {
-      intensity: 3.740000009536743,
+      intensity: 4.289999961853027,
       gradient: { stops: [
-        { position: .21153846383094788, color: { r: .192946195602417, g: .7757474184036255, b: .6591872572898865, a: 1 } },
-        { position: .4375, color: { r: .2022777795791626, g: .398171067237854, b: .713303804397583, a: 1 } },
-        { position: .6682692170143127, color: { r: .5839129686355591, g: .25114062428474426, b: .790771484375, a: 1 } },
-        { position: .8509615659713745, color: { r: .15447954833507538, g: .5618787407875061, b: .7364783883094788, a: 1 } }
+        { position: .12019230425357819, color: { r: .6651517152786255, g: .8660606741905212, b: 1, a: 1 } },
+        { position: .29807692766189575, color: { r: .988457202911377, g: 1, b: .30742937326431274, a: 1 } },
+        { position: .5, color: { r: 1, g: .4448993504047394, b: .8889797925949097, a: 1 } },
+        { position: .6634615659713745, color: { r: .4373873174190521, g: 1, b: .9906231164932251, a: 1 } },
+        { position: .8125, color: { r: .7495399117469788, g: .5580115914344788, b: 1, a: 1 } },
+        { position: 1, color: { r: .5159817934036255, g: 1, b: .5643836259841919, a: 1 } }
       ] },
-      gradientBalance: -30, material: 4, morphSpeed: .25,
-      detail: 2.809999942779541, twist: .019999999552965164,
-      zoom: 70, gradientMethod: 0, warp: .8299999833106995, rotationSpeed: 1
+      gradientBalance: 21, material: 4, morphSpeed: .5099999904632568,
+      detail: 3.069999933242798, twist: .44999998807907104,
+      zoom: 42, gradientMethod: 0, warp: .17999999225139618, rotationSpeed: 12
     } };
     window.PixelPalettesShader.setup(device, frame);
     device.addEventListener('uncapturederror', fail);
