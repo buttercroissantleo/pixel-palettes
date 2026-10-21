@@ -1,0 +1,187 @@
+/* Local fonts. Original design fonts bundled with permission confirmed by the project owner. See assets/licenses/FONT-PERMISSIONS.txt. */
+@font-face { font-family: Alvera; src: url("assets/fonts/AlveraDEMO-BoldSquare.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+@font-face { font-family: FindersKeepers; src: url("assets/fonts/FindersKeepers.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face {
+  font-family: Doto;
+  src: url("assets/fonts/Doto.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: VT323;
+  src: url("assets/fonts/VT323.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("assets/fonts/IBMPlexMono-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+:root { color-scheme: light; font-family: "IBM Plex Mono", monospace; color: #111; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #3e7cc7 url("assets/background.png") center top / cover no-repeat;
+}
+.menu-bar {
+  min-height: 2.142rem;
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+  padding: 0 1.5rem;
+  background: white;
+  border-radius: .5rem .5rem 0 0;
+  font: 1.8rem/.95 VT323, monospace;
+}
+.menu-bar img { display: block; flex: none; }
+.apple { width: 28.86px; height: 28.86px; }
+.system-icons { margin-left: auto; display: flex; align-items: center; gap: 1.8rem; }
+.system-icons img { width: 28.86px; height: 28.86px; }
+.system-icons .finder { width: 21.645px; height: 27.056px; }
+main { margin: 0 auto; padding: 5.92rem 1.5rem 8rem; }
+.homepage { text-align: center; }
+.mac-window { max-width: 60.5rem; margin: 0 auto; border: 3.585px solid #000; background: white; padding: 7.17px; }
+.window-inner {
+  border: 7.17px solid #000;
+  padding: 1.58rem 5.82rem 1.6rem;
+  display: grid;
+  grid-template-columns: 114.726px minmax(0, 1fr);
+  column-gap: 3rem;
+  align-items: center;
+  text-align: left;
+  min-height: 23.528rem;
+}
+.happy-mac { width: 114.726px; height: 114.726px; display: block; }
+h1 {
+  margin: 0;
+  font: 700 6.155rem/.93 Alvera, Doto, monospace;
+  letter-spacing: 0;
+  color: #222;
+  overflow-wrap: anywhere;
+}
+.homepage h1 > span { display: block; }
+.version { grid-column: 2; margin: -.1rem 0 0; text-align: right; font: 3.585rem/.75 FindersKeepers, VT323, monospace; }
+.introduction {
+  max-width: 73rem;
+  margin: 3.9rem auto 2.95rem;
+  padding: .25rem .5rem;
+  color: #fff;
+  /* Text stays directly on the artwork, as in the Figma design. */
+  background: transparent;
+  font-size: 2.269rem;
+  font-weight: 500;
+  line-height: 1.001;
+  text-transform: uppercase;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+.enter-prompt {
+  display: table;
+  max-width: 100%;
+  margin: 0 auto 1rem;
+  border: 2.341px solid #000;
+  padding: .4rem 1.5rem;
+  background: #fff;
+  font: 2.34rem/.875 FindersKeepers, VT323, monospace;
+}
+.mac-button {
+  display: inline-block;
+  position: relative;
+  min-width: 6.375rem;
+  min-height: 2.75rem;
+  padding: .18rem 1rem;
+  border: 2px solid #000;
+  border-radius: 9px;
+  background: #fff;
+  color: #000;
+  font: 2.34rem/.875 FindersKeepers, VT323, monospace;
+  text-align: center;
+  text-decoration: none;
+}
+.mac-button:hover { background-color: #e1f6fa; }
+a:focus-visible { outline: 4px solid #072044; outline-offset: 5px; box-shadow: 0 0 0 5px #fff; }
+main:focus { outline: none; }
+.skip-link { position: absolute; z-index: 2; left: 1rem; top: .5rem; padding: .75rem 1rem; background: white; color: #000; transform: translateY(-180%); }
+.skip-link:focus { transform: none; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.notice { max-width: 52rem; }
+.notice .window-inner { display: flex; flex-direction: column; gap: 1.5rem; padding: 3rem; text-align: center; }
+.notice h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; }
+.notice p { margin: 0; line-height: 1.7; max-width: 36rem; }
+.notice .eyebrow { font: 1.6rem/1.2 VT323, monospace; }
+@media (max-width: 1050px) {
+  main { padding-top: 4.5rem; }
+  .window-inner { padding-inline: 3rem; column-gap: 2rem; }
+  h1 { font-size: 5.3rem; }
+  .introduction { font-size: 1.7rem; }
+}
+@media (max-width: 720px) {
+  main { padding: 3rem 1rem 5rem; }
+  .menu-bar { gap: .8rem; padding-inline: .75rem; font-size: 1.35rem; }
+  .system-icons { gap: .6rem; }
+  .system-icons img { width: 20px; height: 20px; }
+  .system-icons .finder { width: 15px; height: 18.75px; }
+  .window-inner { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 1.5rem; padding: 2rem 1rem; min-height: 0; text-align: center; }
+  .happy-mac { width: 80px; height: 80px; }
+  h1 { font-size: clamp(2rem, 10vw, 4.5rem); letter-spacing: -.05em; line-height: 1.05; overflow-wrap: anywhere; }
+  .version { grid-column: 1; font-size: 2.8rem; }
+  .introduction { margin: 2rem auto 1.5rem; font-size: 1.125rem; line-height: 1.5; }
+  .enter-prompt { font-size: 2rem; padding-inline: .75rem; }
+  .notice .window-inner { padding: 2rem 1rem; }
+}
+@media (max-width: 420px) {
+  .menu-bar { gap: .7rem; }
+  .system-icons { display: none; }
+}
+@media (forced-colors: active) {
+  .mac-window, .window-inner, .mac-button, .enter-prompt { border-color: CanvasText; }
+  .mac-button { border: 2px solid ButtonText; }
+  a:focus-visible { outline-color: Highlight; }
+}
+/* The canvas motion controller also observes reduced-motion preferences. */
+
+/* Reflow enlarged text without hiding content or horizontal scrolling. */
+.menu-bar { flex-wrap: wrap; row-gap: .25rem; }
+.window-inner > * { min-width: 0; }
+.enter-prompt { width: max-content; overflow-wrap: anywhere; }
+.notice p, .notice h1, .notice a { overflow-wrap: anywhere; max-width: 100%; }
+@media (max-width: 720px) {
+  .menu-bar { column-gap: clamp(.35rem, 2vw, .8rem); }
+  .homepage h1 { font-size: clamp(2rem, 10vw, 4.5rem); }
+  .introduction { padding: .5rem; }
+  .mac-window { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+.introduction > span { background: none; padding: 0; }
+
+body { position: relative; isolation: isolate; }
+#moving-background { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.accessibility-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .75rem; padding: 1rem; }
+.accessibility-controls button { max-width: 100%; min-height: 44px; padding: .65rem 1rem; border: 2px solid #000; border-radius: 9px; background: #fff; color: #000; font: 500 1rem/1.2 "IBM Plex Mono", monospace; cursor: pointer; overflow-wrap: anywhere; }
+.accessibility-controls button:hover { background: #e1f6fa; }
+.accessibility-controls button[aria-pressed="true"] { background: #000; color: #fff; border-color: #fff; }
+.accessibility-controls button:disabled { cursor: default; }
+.accessibility-controls[hidden] { display: none; }
+html.motion-paused *, html.motion-paused *::before, html.motion-paused *::after { animation-play-state: paused !important; transition: none !important; scroll-behavior: auto !important; }
+html.high-contrast body { background: #102b43; }
+html.high-contrast #moving-background { visibility: hidden; }
+html.high-contrast .introduction { color: #fff; }
+html.high-contrast *, html.high-contrast *::before, html.high-contrast *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+.motion-toggle[hidden] { display: none; }
+button:focus-visible { outline: 4px solid #072044; outline-offset: 4px; box-shadow: 0 0 0 4px #fff; }
+/* Match the reference: unoutlined IBM Plex Mono Medium. */
+.introduction { font-family: "IBM Plex Mono", monospace; font-weight: 500; }
+@media (min-width: 1051px) {
+ .enter-prompt { width: 25.6875rem; padding-inline: .4rem; }
+}
+/* Keep the entrance visible on shorter desktop windows. */
+@media (min-width: 1051px) and (max-height: 900px) {
+  .homepage { padding-top: 2.5rem; }
+  .introduction { margin-top: 2rem; margin-bottom: 1.5rem; }
+}

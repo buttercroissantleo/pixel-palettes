@@ -1,0 +1,2 @@
+On October 21, 2026, the project owner confirmed permission to bundle the original Alvera DEMO and FindersKeepers font files in this website ZIP. This records that confirmation; it does not create a new font license. Retain the applicable license or written permission with institutional project records.
+The menu continues to use the included OFL-licensed VT323; the installed ChiKareGo file is not the exact ChiKareGo2 font specified in Figma.
