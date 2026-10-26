@@ -1,259 +1,32 @@
-/* Local fonts. Original design fonts bundled with permission confirmed by the project owner. See assets/licenses/FONT-PERMISSIONS.txt. */
-@font-face { font-family: Alvera; src: url("assets/fonts/AlveraDEMO-BoldSquare.ttf") format("truetype"); font-weight: 700; font-display: swap; }
-@font-face { font-family: FindersKeepers; src: url("assets/fonts/FindersKeepers.ttf") format("truetype"); font-weight: 400; font-display: swap; }
-@font-face {
-  font-family: Doto;
-  src: url("assets/fonts/Doto.ttf") format("truetype");
-  font-weight: 100 900;
-  font-display: swap;
-}
-@font-face {
-  font-family: VT323;
-  src: url("assets/fonts/VT323.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "IBM Plex Mono";
-  src: url("assets/fonts/IBMPlexMono-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-display: swap;
-}
-:root { color-scheme: light; font-family: "IBM Plex Mono", monospace; color: #111; }
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: #3e7cc7 url("assets/background.png") center top / cover no-repeat;
-}
-.menu-bar {
-  min-height: 2.142rem;
-  display: flex;
-  align-items: center;
-  gap: 1.35rem;
-  padding: 0 1.5rem;
-  background: white;
-  border-radius: .5rem .5rem 0 0;
-  font: 1.8rem/.95 VT323, monospace;
-}
-.menu-bar img { display: block; flex: none; }
-.apple { width: 28.86px; height: 28.86px; }
-.system-icons { margin-left: auto; display: flex; align-items: center; gap: 1.8rem; }
-.system-icons img { width: 28.86px; height: 28.86px; }
-.system-icons .finder { width: 21.645px; height: 27.056px; }
-main { margin: 0 auto; padding: 5.92rem 1.5rem 8rem; }
-.homepage { text-align: center; }
-.mac-window { max-width: 60.5rem; margin: 0 auto; border: 3.585px solid #000; background: white; padding: 7.17px; }
-.window-inner {
-  border: 7.17px solid #000;
-  padding: 1.58rem 5.82rem 1.6rem;
-  display: grid;
-  grid-template-columns: 114.726px minmax(0, 1fr);
-  column-gap: 3rem;
-  align-items: center;
-  text-align: left;
-  min-height: 23.528rem;
-}
-.happy-mac { width: 114.726px; height: 114.726px; display: block; }
-h1 {
-  margin: 0;
-  font: 700 6.155rem/.93 Alvera, Doto, monospace;
-  letter-spacing: 0;
-  color: #222;
-  overflow-wrap: anywhere;
-}
-.homepage h1 > span { display: block; }
-.version { grid-column: 2; margin: -.1rem 0 0; text-align: right; font: 3.585rem/.75 FindersKeepers, VT323, monospace; }
-.introduction {
-  max-width: 73rem;
-  margin: 3.9rem auto 2.95rem;
-  padding: .25rem .5rem;
-  color: #fff;
-  /* Text stays directly on the artwork, as in the Figma design. */
-  background: transparent;
-  font-size: 2.269rem;
-  font-weight: 500;
-  line-height: 1.001;
-  text-transform: uppercase;
-  text-wrap: pretty;
-  overflow-wrap: anywhere;
-}
-.enter-prompt {
-  display: table;
-  max-width: 100%;
-  margin: 0 auto 1rem;
-  border: 2.341px solid #000;
-  padding: .4rem 1.5rem;
-  background: #fff;
-  font: 2.34rem/.875 FindersKeepers, VT323, monospace;
-}
-.mac-button {
-  display: inline-block;
-  position: relative;
-  min-width: 6.375rem;
-  min-height: 2.75rem;
-  padding: .18rem 1rem;
-  border: 2px solid #000;
-  border-radius: 9px;
-  background: #fff;
-  color: #000;
-  font: 2.34rem/.875 FindersKeepers, VT323, monospace;
-  text-align: center;
-  text-decoration: none;
-}
-.mac-button:hover { background-color: #e1f6fa; }
-a:focus-visible { outline: 4px solid #072044; outline-offset: 5px; box-shadow: 0 0 0 5px #fff; }
-main:focus { outline: none; }
-.skip-link { position: absolute; z-index: 2; left: 1rem; top: .5rem; padding: .75rem 1rem; background: white; color: #000; transform: translateY(-180%); }
-.skip-link:focus { transform: none; }
-.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
-.notice { max-width: 52rem; }
-.notice .window-inner { display: flex; flex-direction: column; gap: 1.5rem; padding: 3rem; text-align: center; }
-.notice h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; }
-.notice p { margin: 0; line-height: 1.7; max-width: 36rem; }
-.notice .eyebrow { font: 1.6rem/1.2 VT323, monospace; }
-@media (max-width: 1050px) {
-  main { padding-top: 4.5rem; }
-  .window-inner { padding-inline: 3rem; column-gap: 2rem; }
-  h1 { font-size: 5.3rem; }
-  .introduction { font-size: 1.7rem; }
-}
-@media (max-width: 720px) {
-  main { padding: 3rem 1rem 5rem; }
-  .menu-bar { gap: .8rem; padding-inline: .75rem; font-size: 1.35rem; }
-  .system-icons { gap: .6rem; }
-  .system-icons img { width: 20px; height: 20px; }
-  .system-icons .finder { width: 15px; height: 18.75px; }
-  .window-inner { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 1.5rem; padding: 2rem 1rem; min-height: 0; text-align: center; }
-  .happy-mac { width: 80px; height: 80px; }
-  h1 { font-size: clamp(2rem, 10vw, 4.5rem); letter-spacing: -.05em; line-height: 1.05; overflow-wrap: anywhere; }
-  .version { grid-column: 1; font-size: 2.8rem; }
-  .introduction { margin: 2rem auto 1.5rem; font-size: 1.125rem; line-height: 1.5; }
-  .enter-prompt { font-size: 2rem; padding-inline: .75rem; }
-  .notice .window-inner { padding: 2rem 1rem; }
-}
-@media (max-width: 420px) {
-  .menu-bar { gap: .7rem; }
-  .system-icons { display: none; }
-}
-@media (forced-colors: active) {
-  .mac-window, .window-inner, .mac-button, .enter-prompt { border-color: CanvasText; }
-  .mac-button { border: 2px solid ButtonText; }
-  a:focus-visible { outline-color: Highlight; }
-}
-/* The canvas motion controller also observes reduced-motion preferences. */
+/* Measurements and palette: current Pixel Palettes frames; Classic Macintosh UI Kit
+   Button Regular/Rest/Pressed, Dialog Modeless/8-bit, Scroll bar Vertical/Enabled/8-bit. */
+@font-face{font-family:Alvera;src:url('assets/fonts/AlveraDEMO-BoldSquare.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:FindersKeepers;src:url('assets/fonts/FindersKeepers.woff2') format('woff2');font-display:swap}
+@font-face{font-family:ChiKareGo;src:url('assets/fonts/ChiKareGo.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url('assets/fonts/IBMPlexMono-Medium.woff2') format('woff2');font-weight:400 500;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url('assets/fonts/IBMPlexMono-SemiBold.ttf') format('truetype');font-weight:600;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url('assets/fonts/IBMPlexMono-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
+@font-face{font-family:OpenDyslexic;src:url('assets/fonts/OpenDyslexic-Regular.otf') format('opentype');font-weight:400 500;font-display:swap}
+@font-face{font-family:OpenDyslexic;src:url('assets/fonts/OpenDyslexic-Bold.otf') format('opentype');font-weight:600 900;font-display:swap}
+:root{color-scheme:light;--ink:#000;--paper:#fff;--grey-1:#f3f3f3;--grey-5:#c0c0c0;--grey-8:#777;--accent-1:#dadaff;--accent-2:#b3b3da;--accent-3:#8787b3;--accent-4:#545487;--accessible-bg:#2b493e;--body-font:'IBM Plex Mono',monospace;--ui-font:FindersKeepers,monospace;--scroll-width:32px;font-family:var(--body-font);color:var(--ink)}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;position:relative;isolation:isolate;background:#ffbceb url('assets/background.webp') center top/cover fixed no-repeat}button,a,input{touch-action:manipulation}button{cursor:pointer}a{color:inherit}img{vertical-align:middle}p,h1,h2,figure{margin:0}button{color:inherit}button:disabled{cursor:default}main{min-width:0}main:focus{outline:none}[hidden]{display:none!important}
+:focus-visible{outline:3px solid #002c75;outline-offset:4px;box-shadow:0 0 0 4px white}.skip-link{position:fixed;left:1rem;top:1rem;padding:1rem;background:white;color:black;z-index:20;transform:translateY(-200%)}.skip-link:focus{transform:none}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+#moving-background{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}#confetti-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:10;pointer-events:none}
+.mac-window{border:3.585px solid var(--ink);background:white;padding:7.17px}.window-inner{border:7.17px solid var(--ink);min-width:0}.homepage{position:relative;max-width:1440px;margin:auto;padding-top:90px}.hero{width:968px;max-width:calc(100% - 64px);margin:auto;position:relative;z-index:1}.hero .window-inner{position:relative;min-height:376.44px;padding:26px 40px 28px 93px;display:grid;grid-template-columns:115px minmax(0,1fr);column-gap:47px;align-items:center}.hero h1{font:700 98.485px/.93 Alvera,monospace;opacity:.88;max-width:490px;overflow-wrap:anywhere}.hero h1>span{display:block}.hero .happy-mac{display:block}.dates{position:absolute;right:10px;top:8px;font:27.662px/.75 ChiKareGo,monospace}.version{position:absolute;right:99px;bottom:34px;font:57.363px/.75 var(--ui-font)}.curator-note{position:relative;z-index:1;width:607px;max-width:calc(100% - 32px);min-height:92px;margin:23px auto 24px;padding:8px 6px;border-right:1px solid #777;border-bottom:1px solid #777;background:white;font:38.54px/.75 var(--ui-font);text-align:center;display:flex;align-items:flex-start;justify-content:center}
+.desktop-items{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,433px) minmax(0,308px) minmax(0,339px);gap:61px;width:calc(100% - 152px);margin:auto;align-items:start}.sticky-note{position:relative;background:#ffffb3;border:2.226px solid #ffda00;min-width:0;height:329px}.sticky-titlebar{height:23px;background:url('assets/figma/home-imgHeader.png') top left/4.451px 4.451px;display:flex;align-items:center;justify-content:space-between;padding:0 10px}.sticky-titlebar h2{font:22.253px/1 var(--ui-font);background:#ffffb3}.sticky-titlebar img{width:15.579px;height:15.579px}.sticky-resize{position:absolute;right:0;bottom:0;width:17.804px;height:17.804px;pointer-events:none}.info-shell{height:calc(100% - 23px)}.info-shell .scroll-content{padding:12px 7px 24px;text-align:center;font:36.716px/.75 var(--ui-font)}.info-shell p+p{margin-top:27px}
+.folder-button{display:flex;align-items:center;flex-direction:column;justify-self:start;margin-top:16px;border:0;background:transparent;font:41.864px/.75 var(--ui-font);padding:0;max-width:100%}.folder-button img{width:83.728px;height:83.728px}.folder-button span{background:white;padding:2px 8px 4px}.folder-button:hover span{background:black;color:white}.exhibition-window{margin-top:32px;border:1.901px solid black;box-shadow:1.901px 1.901px black;background:white;min-width:0;min-height:198px}.utility-titlebar{height:22.81px;border-bottom:1.901px solid black;box-shadow:inset 2px 2px var(--accent-1),inset -2px -2px var(--accent-2);background:url('assets/figma/home-imgBackground.png') 4px 4px/3.802px 3.802px;display:flex;justify-content:space-between;align-items:center;padding:0 11px}.utility-titlebar img{background:var(--grey-1)}.utility-titlebar img:first-child{width:13.306px;height:13.306px}.utility-titlebar img:last-child{width:20.91px;height:20.91px}.utility-content{padding:15px 20px 8px}.utility-content p{font:51.133px/.75 var(--ui-font);margin-bottom:13px}.mac-button{--button-fill:white;--edge:3px;--corner:9px;position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:0;border:0;background:transparent;padding:2px 15px 5px;text-decoration:none;text-align:center;font:49.977px/.8 var(--ui-font);isolation:isolate;overflow-wrap:anywhere}.mac-button>span:not(.button-outline){position:relative}.button-outline{position:absolute;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(black,black) top center/calc(100% - var(--corner)*2) var(--edge) no-repeat,linear-gradient(black,black) bottom center/calc(100% - var(--corner)*2) var(--edge) no-repeat,linear-gradient(black,black) left center/var(--edge) calc(100% - var(--corner)*2) no-repeat,linear-gradient(black,black) right center/var(--edge) calc(100% - var(--corner)*2) no-repeat}.button-outline:before{content:'';position:absolute;inset:var(--edge);background:var(--button-fill);clip-path:polygon(6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px),0 6px)}.button-outline i{position:absolute;width:var(--corner);height:var(--corner);background-size:contain;background-repeat:no-repeat}.button-outline i:nth-child(1){top:0;left:0;background-image:url('assets/figma/home-imgBtnCornerUl.svg')}.button-outline i:nth-child(2){bottom:0;left:0;background-image:url('assets/figma/home-imgBtnCornerLl.svg')}.button-outline i:nth-child(3){bottom:0;right:0;background-image:url('assets/figma/home-imgBtnCornerLr.svg')}.button-outline i:nth-child(4){top:0;right:0;background-image:url('assets/figma/home-imgBtnCornerUr.svg')}.mac-button:hover{--button-fill:#f3f3f3}.mac-button:active{--button-fill:black;color:white}.mac-button:disabled{opacity:.6}.enter-button{--button-fill:#d9ffef;--edge:3.48px;--corner:10.44px;min-width:154.4px;font-size:65.725px;min-height:51.47px}
+.desktop-art{position:absolute;inset:0;overflow:hidden;pointer-events:none}.deco{position:absolute;object-fit:contain}.classic-mac{left:1262.85px;top:90.1px;width:99.213px;height:116.338px;transform:rotate(168.77deg) scaleY(-1)}.imac{left:1170.85px;top:439.05px;width:215.065px;height:185.452px;transform:rotate(20.72deg)}.ibook{left:53.82px;top:62.28px;width:146.287px;height:92.107px;transform:rotate(15.91deg)}.performa{left:-25.86px;top:307.48px;width:275.915px;height:82.774px;transform:rotate(-26.11deg)}
+.accessibility-controls{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px;margin:4px auto 0;padding:0 16px 12px;max-width:1440px}.accessibility-controls .mac-button{font:20px/1.4 var(--body-font);min-width:313px;min-height:53px;padding:10px 16px;--edge:3.572px;--corner:10.716px}.accessibility-controls #motion-toggle{min-width:0;font-size:16px;position:absolute;right:24px;bottom:12px}.exhibition{max-width:1440px;margin:auto;padding:188px 24px 125px}.notice{width:825px;max-width:100%;margin:auto;border-width:3.055px;padding:6.11px}.notice .window-inner{border-width:6.11px;display:flex;flex-direction:column;align-items:center;min-height:623px;padding:58px 22px 24px;text-align:center}.notice .eyebrow{font:31.685px/.75 var(--ui-font);margin-top:18px}.notice h1{font:700 64px/1.22 Alvera,monospace;text-transform:lowercase;opacity:.88;margin:26px 0 21px;max-width:100%;overflow-wrap:anywhere}.notice-copy{font:31.685px/.75 var(--ui-font);max-width:504px}.document-links{display:flex;width:100%;gap:68px;justify-content:center;flex-wrap:wrap;margin-top:68px}.document-links .mac-button{flex:1;min-width:0;min-height:47.57px;font-size:60.739px;--edge:3.216px;--corner:9.647px}.press-link{--button-fill:#e7fff6}.guide-link{--button-fill:#e2eeff}.notice .back-home{align-self:flex-end;margin-top:auto;min-width:232px;font-size:49.977px;--edge:2.646px;--corner:7.938px}
+.document-main{max-width:1440px;margin:auto;padding:72px 24px 55px}.document-window{max-width:1080px;margin:auto;border:3px solid black;box-shadow:2px 2px black;background:white}.dialog-titlebar{position:relative;min-height:57px;border-bottom:3px solid black;padding:2px 50px;display:flex;justify-content:center;align-items:center;background:repeating-linear-gradient(to bottom,#f3f3f3 0 3px,#777 3px 6px);box-shadow:inset 2px 2px var(--accent-1),inset -2px -2px var(--accent-2)}.dialog-titlebar h1{background:var(--grey-1);padding:0 21px;font:50.21px/.9375 ChiKareGo,monospace;text-align:center;overflow-wrap:anywhere}.close-window{display:flex;align-items:center;justify-content:center;position:absolute;left:14px;top:4px;width:44px;height:44px;background:var(--grey-1)}.close-window img{display:block}.close-window:hover{background:white}.close-window:active{filter:brightness(.7)}.document-shell{height:770px;max-height:calc(100dvh - 210px);min-height:240px}.scroll-shell{position:relative;display:flex;min-width:0}.scroll-viewport{min-width:0;flex:1;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;scroll-behavior:auto;-webkit-overflow-scrolling:touch}.scroll-viewport:focus-visible{outline-offset:-4px;box-shadow:inset 0 0 0 4px white;position:relative;z-index:2}.scroll-content{min-width:0}.document-copy{padding:24px 40px 32px;font:500 1.5rem/1.6 var(--body-font);overflow-wrap:anywhere}.document-copy p+p{margin-top:24px}.document-copy strong{font-weight:700}.document-meta{font-size:1.25rem;line-height:1.6;text-align:center}.press-poster{text-align:center;margin:24px auto 72px}.press-poster img{width:494px;max-width:100%;height:auto}.document-copy a{color:#163f7d;text-decoration-thickness:2px;text-underline-offset:.16em}.guide-display-title{font-size:4.375rem;line-height:1.3;font-weight:700;text-align:center}.guide-subtitle{text-align:center;margin:24px 0}.guide-subtitle p:first-child{font-size:2rem;font-weight:600;line-height:1.5625}.guide-subtitle p:not(:first-child){font-size:1.25rem;font-weight:600;line-height:2.5;margin-top:20px}.essay{margin-top:48px}.essay h2{font-size:2.25rem;font-weight:700;line-height:1.6;margin:0 0 0;scroll-margin-top:24px}.essay .byline{margin:0 0 64px;font:inherit}.essay h2+p:not(.byline){margin-top:24px}.gallery-map{margin:24px auto;max-width:744px}.gallery-map img{max-width:100%;height:auto}.document-copy .artist-statement h2{font-weight:700}.document-copy .divider{letter-spacing:.05em}.scroll-enhanced>.scroll-viewport{scrollbar-width:none;scrollbar-gutter:auto}.scroll-enhanced>.scroll-viewport::-webkit-scrollbar{display:none}
+.mac-scrollbar{flex:0 0 var(--scroll-width);display:flex;flex-direction:column;border-left:2px solid black;background:var(--grey-1);min-height:0}.scroll-arrow{width:100%;height:30px;min-height:30px;padding:0;border:0;background:var(--grey-1) url('assets/figma/scroll-imgBaseElementsScrollBtnBg.svg') center/100% 100%;display:grid;place-items:center}.scroll-arrow img{display:block;pointer-events:none}.scroll-arrow.down img{transform:rotate(180deg)}.scroll-arrow:active img{filter:brightness(0)}.scroll-arrow[aria-disabled=true] img{filter:grayscale(1);opacity:.5}.scroll-track{position:relative;flex:1;min-height:32px;border-block:2px solid black;background:#ddd url('assets/figma/scroll-imgScrollBg.png') top left/8.48px 4.24px;touch-action:none}.scroll-thumb{position:absolute;left:0;top:0;width:100%;min-height:32px;margin:0;border:2px solid var(--accent-4);border-top-color:#777;background:#c0c0c0;box-shadow:inset 2px 2px var(--accent-1),inset -2px -2px var(--accent-4);cursor:grab;touch-action:none}.scroll-thumb:after{content:'';position:absolute;left:25%;right:25%;top:5px;bottom:5px;max-height:25px;margin:auto;background:repeating-linear-gradient(to bottom,var(--accent-1) 0 2px,var(--accent-3) 2px 4px)}.scroll-thumb[data-dragging=true]{cursor:grabbing}.scroll-thumb:focus-visible{outline-offset:-4px;z-index:3}.scroll-arrow:focus-visible{outline-offset:-4px;z-index:3}.scroll-page{position:absolute;left:0;width:100%;background:transparent;border:0;padding:0;cursor:pointer;touch-action:none}.scroll-page:focus-visible{outline-offset:-3px}.scroll-shell:not(.has-overflow) .mac-scrollbar{display:none}
+html.high-contrast body{background:var(--accessible-bg)}html.high-contrast #moving-background{visibility:hidden}html.high-contrast .desktop-art{display:none}html.high-contrast{--body-font:OpenDyslexic,Arial,sans-serif;--ui-font:OpenDyslexic,Arial,sans-serif}html.high-contrast p,html.high-contrast h1,html.high-contrast h2,html.high-contrast a,html.high-contrast button{letter-spacing:.035em;word-spacing:.08em}html.high-contrast .hero h1{font:700 3.5rem/1.4 var(--body-font);opacity:1}html.high-contrast .dates{position:static;grid-column:1/-1;font:1.125rem/1.6 var(--body-font);margin-top:24px}html.high-contrast .version{position:static;grid-column:2;font:1rem/1.6 var(--body-font);text-align:right}html.high-contrast .curator-note{font:1.125rem/1.6 var(--body-font);padding:12px;align-items:center}html.high-contrast .info-shell .scroll-content{font:1.125rem/1.6 var(--body-font);text-align:left}html.high-contrast .sticky-titlebar h2{font:1rem/1.4 var(--body-font)}html.high-contrast .folder-button{font:1rem/1.6 var(--body-font)}html.high-contrast .utility-content p{font:1.125rem/1.6 var(--body-font)}html.high-contrast .mac-button{font:1.125rem/1.6 var(--body-font);padding:10px 16px}html.high-contrast .exhibition-window{min-height:198px}html.high-contrast .notice h1{font:700 2rem/1.6 var(--body-font)}html.high-contrast .notice-copy,html.high-contrast .notice .eyebrow{font:1.125rem/1.6 var(--body-font)}html.high-contrast .notice .back-home{margin-top:48px}html.high-contrast .dialog-titlebar h1{font:700 1.5rem/1.6 var(--body-font)}html.high-contrast .document-copy{font-size:1.375rem;line-height:1.75}html.high-contrast .essay h2{font-size:1.8rem;line-height:1.6}html.high-contrast .guide-display-title{font-size:2.5rem}html.high-contrast .guide-subtitle p:first-child{font-size:1.5rem}html.high-contrast .guide-subtitle p:not(:first-child){font-size:1.125rem;line-height:1.75}html.high-contrast .document-meta{font-size:1.125rem}html.high-contrast .accessibility-controls .mac-button{min-width:0}
+@media(max-width:1200px){.homepage{padding-top:48px}.desktop-items{width:calc(100% - 64px);grid-template-columns:minmax(0,1.2fr) minmax(0,.7fr) minmax(0,1fr);gap:32px}.desktop-art{opacity:.9}.deco{max-width:15vw}.classic-mac{left:auto;right:16px}.imac{left:auto;right:0}.hero{max-width:calc(100% - 120px)}.hero .window-inner{padding-left:40px;column-gap:32px}.hero h1{font-size:clamp(4rem,7vw,6.155rem)}.curator-note{margin-bottom:24px}.version{right:40px}.dates{font-size:24px}.accessibility-controls{margin-top:24px}.exhibition{padding-top:80px;padding-bottom:80px}.document-main{padding-top:40px;padding-bottom:32px}}
+@media(max-width:900px){.hero{max-width:calc(100% - 32px)}.hero .window-inner{padding:40px 24px 24px;grid-template-columns:115px minmax(0,1fr);min-height:0}.hero h1{font-size:4rem}.dates{position:static;grid-column:1/-1;text-align:center;order:3;margin-top:24px;font-size:26px;line-height:1.2}.version{position:static;grid-column:2;font-size:40px;order:4;text-align:right;margin-top:16px}.desktop-items{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px}.folder-button{grid-column:1/-1;grid-row:2;justify-self:center;margin:0}.exhibition-window{margin-top:0}.desktop-art{display:none}.accessibility-controls #motion-toggle{position:relative;right:auto;bottom:auto}.exhibition{padding:48px 16px}.notice .window-inner{min-height:0;padding:36px 20px}.notice h1{font-size:3rem}.document-links{gap:24px;margin-top:36px}.document-links .mac-button{font-size:48px}.notice .back-home{margin-top:48px}.document-main{padding:24px 16px}.document-copy{padding:24px;font-size:1.25rem}.essay h2{font-size:1.75rem}.guide-display-title{font-size:3rem}.guide-subtitle p:first-child{font-size:1.5rem}.guide-subtitle p:not(:first-child){font-size:1rem;line-height:1.6}.document-meta{font-size:1rem}.dialog-titlebar h1{font-size:40px}.document-shell{max-height:calc(100dvh - 175px)}}
+@media(max-width:540px){.homepage{padding-top:24px}.hero .window-inner{grid-template-columns:minmax(0,1fr);justify-items:center;gap:20px;padding:24px 12px}.hero h1{font-size:clamp(2.25rem,12vw,4rem);text-align:center}.hero .dates,.hero .version{grid-column:1;margin:0;text-align:center;line-height:1.2}.hero .dates{font-size:24px}.curator-note{font-size:32px;line-height:.9;min-height:0;padding:12px}.desktop-items{width:calc(100% - 32px);grid-template-columns:minmax(0,1fr);gap:24px}.folder-button{grid-row:auto;grid-column:1}.exhibition-window{grid-row:3}.sticky-note{height:329px}.accessibility-controls .mac-button{min-width:0;max-width:100%;font-size:1rem}.accessibility-controls{gap:12px;padding-bottom:24px}.notice h1{font-size:2.5rem}.notice .window-inner{padding:24px 12px}.document-links{flex-direction:column;gap:20px}.document-links .mac-button{width:100%;font-size:44px}.notice .back-home{align-self:center;min-width:0}.document-main{padding:16px 8px}.dialog-titlebar{padding:4px 44px 4px 48px}.dialog-titlebar h1{font-size:32px;padding:4px;line-height:1.1}.close-window{left:2px}.document-copy{padding:20px 16px;font-size:1rem;line-height:1.6}.document-meta{font-size:.875rem}.guide-display-title{font-size:2rem}.guide-subtitle p:first-child{font-size:1.2rem}.guide-subtitle p:not(:first-child){font-size:.875rem}.essay h2{font-size:1.35rem}.essay .byline{margin-bottom:32px}.press-poster{margin-bottom:32px}.document-shell{min-height:220px}.mac-scrollbar{--scroll-width:32px}html.high-contrast .hero h1{font-size:2rem}html.high-contrast .hero .version{grid-column:1}html.high-contrast .document-copy{font-size:1rem}html.high-contrast .essay h2{font-size:1.35rem}html.high-contrast .guide-display-title{font-size:1.8rem}html.high-contrast .dialog-titlebar h1{font-size:1rem}html.high-contrast .document-meta{font-size:.875rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}html.motion-paused *,html.high-contrast *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media(forced-colors:active){body{background:Canvas}.mac-button{border:2px solid ButtonText}.button-outline{display:none}.document-window,.mac-window,.window-inner,.sticky-note{border-color:CanvasText}.dialog-titlebar{background:Canvas}.scroll-thumb{background:ButtonFace;border-color:ButtonText}.scroll-track{background:Canvas}.scroll-arrow{border:1px solid ButtonText}.scroll-arrow img{filter:grayscale(1)}:focus-visible{outline-color:Highlight}}
+@media print{body{background:white}#moving-background,.accessibility-controls,.mac-scrollbar,.close-window,.skip-link{display:none!important}.document-main{padding:0}.document-shell{height:auto;max-height:none}.scroll-viewport{overflow:visible}.document-window{border:0;box-shadow:none}.document-copy{font-size:12pt}.essay h2{break-after:avoid}.gallery-map{max-height:80vh}}
 
-/* Reflow enlarged text without hiding content or horizontal scrolling. */
-.menu-bar { flex-wrap: wrap; row-gap: .25rem; }
-.window-inner > * { min-width: 0; }
-.enter-prompt { width: max-content; overflow-wrap: anywhere; }
-.notice p, .notice h1, .notice a { overflow-wrap: anywhere; max-width: 100%; }
-@media (max-width: 720px) {
-  .menu-bar { column-gap: clamp(.35rem, 2vw, .8rem); }
-  .homepage h1 { font-size: clamp(2rem, 10vw, 4.5rem); }
-  .introduction { padding: .5rem; }
-  .mac-window { max-width: 100%; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-}
-
-.introduction > span { background: none; padding: 0; }
-
-body { position: relative; isolation: isolate; }
-#moving-background { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
-.accessibility-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .75rem; padding: 1rem; }
-.accessibility-controls button { max-width: 100%; min-height: 44px; padding: .65rem 1rem; border: 2px solid #000; border-radius: 9px; background: #fff; color: #000; font: 500 1rem/1.2 "IBM Plex Mono", monospace; cursor: pointer; overflow-wrap: anywhere; }
-.accessibility-controls button:hover { background: #e1f6fa; }
-.accessibility-controls button[aria-pressed="true"] { background: #000; color: #fff; border-color: #fff; }
-.accessibility-controls button:disabled { cursor: default; }
-.accessibility-controls[hidden] { display: none; }
-html.motion-paused *, html.motion-paused *::before, html.motion-paused *::after { animation-play-state: paused !important; transition: none !important; scroll-behavior: auto !important; }
-html.high-contrast body { background: #102b43; }
-html.high-contrast #moving-background { visibility: hidden; }
-html.high-contrast .introduction { color: #fff; }
-html.high-contrast *, html.high-contrast *::before, html.high-contrast *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-.motion-toggle[hidden] { display: none; }
-button:focus-visible { outline: 4px solid #072044; outline-offset: 4px; box-shadow: 0 0 0 4px #fff; }
-/* Match the reference: unoutlined IBM Plex Mono Medium. */
-.introduction { font-family: "IBM Plex Mono", monospace; font-weight: 500; }
-@media (min-width: 1051px) {
- .enter-prompt { width: 25.6875rem; padding-inline: .4rem; }
-}
-/* Keep the entrance visible on shorter desktop windows. */
-@media (min-width: 1051px) and (max-height: 900px) {
-  .homepage { padding-top: 2.5rem; }
-  .introduction { margin-top: 2rem; margin-bottom: 1.5rem; }
-}
-
-/* Updated Figma desktop: pink lava, sticky note and utility window. */
-body { background-color: #ffbceb; background-attachment: fixed; }
-.homepage { padding-top: 5.625rem; padding-bottom: 4rem; min-height: calc(100vh - 76px); text-align: left; }
-.desktop-items { display: grid; grid-template-columns: 26.33% 44.01% 29.66%; align-items: start; max-width: 1143px; margin: 3rem auto 0; }
-.folder-button { display: flex; flex-direction: column; align-items: center; justify-self: start; max-width: 100%; border: 0; padding: 0; background: transparent; color: #000; cursor: pointer; font: 2.7rem/.85 FindersKeepers, VT323, monospace; }
-.folder-button img { display: block; width: 83.728px; height: 83.728px; image-rendering: pixelated; }
-.folder-button span { background: white; padding: .1rem .4rem .3rem; overflow-wrap: anywhere; }
-.folder-button:hover span { color: #fff; background: #111; }
-.sticky-note { position: relative; width: 364px; max-width: calc(100% - 1.5rem); margin-top: 5.875rem; border: 2.889px solid #ffda00; background: #ffffb3; color: #000; min-height: 244px; }
-.sticky-titlebar { height: 26px; padding: 0 11.56px; background: url("assets/sticky-pattern.png") left top / 5.778px 5.778px repeat; display: flex; align-items: center; justify-content: space-between; }
-.sticky-titlebar img { width: 20.222px; height: 20.222px; }
-.sticky-note p { margin: 0; padding: 0 .9rem 2.3rem; font: 2.97875rem/.75 FindersKeepers, VT323, monospace; overflow-wrap: anywhere; }
-.sticky-resize { position: absolute; bottom: -2px; right: -2px; width: 23.111px; height: 23.111px; }
-.exhibition-window { border: 1.901px solid #000; background: #fff; box-shadow: 1.901px 1.901px #000; min-width: 0; min-height: 198px; }
-.utility-titlebar { height: 22.81px; padding: 2px 11.41px; border-bottom: 1.901px solid #000; box-shadow: inset 0 0 0 2px #b3b3da; background: url("assets/window-pattern.png") 3px 3px / 3.802px 3.802px repeat; display: flex; justify-content: space-between; align-items: center; }
-.utility-titlebar img { width: 13.306px; height: 13.306px; background: #f3f3f3; }
-.utility-titlebar img:last-child { width: 20.91px; height: 20.91px; }
-.utility-content { padding: 1.1rem 1.25rem 1.8rem; }
-.utility-content p { font: 3.1958rem/.75 FindersKeepers, VT323, monospace; margin: 0 0 .7rem; overflow-wrap: anywhere; }
-.utility-content .mac-button { font-size: 3.16rem; line-height: .75; min-width: 7.4rem; padding: .1rem 1rem .3rem; max-width: 100%; overflow-wrap: anywhere; }
-#confetti-canvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 4; pointer-events: none; }
-html.high-contrast .sticky-note { border-color: #000; background: #fff; }
-[hidden] { display: none !important; }
-@media (max-width: 1100px) {
- .homepage { padding-top: 3rem; }
- .desktop-items { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 2rem; }
- .folder-button { grid-column: 1 / -1; justify-self: center; }
- .sticky-note { margin-top: 0; width: 100%; max-width: none; }
-}
-@media (max-width: 720px) {
- .homepage { padding: 2rem 1rem 3rem; }
- .desktop-items { grid-template-columns: minmax(0,1fr); max-width: 364px; gap: 2rem; margin-top: 2rem; }
- .sticky-note p { font-size: 2.6rem; line-height: .85; }
- .utility-content p { font-size: 2.7rem; line-height: .85; }
- .accessibility-controls { justify-content: center; }
-}
-@media (forced-colors: active) { .sticky-note, .exhibition-window { border-color: CanvasText; } button:focus-visible { outline-color: Highlight; } }
-
-/* Latest Figma collage. Decorative assets never intercept controls. */
-.homepage { position: relative; max-width: 1440px; min-height: 1024px; }
-.desktop-art { position: absolute; inset: 0; height: 1024px; overflow: hidden; pointer-events: none; }
-.deco { position: absolute; display: block; height: auto; object-fit: contain; }
-.fish-top { left: 84.668%; top: 5.009%; width: 7.832%; transform: translate(-50%,-50%) rotate(-155.48deg) scaleY(-1); }
-.classic-mac { left: 91.713%; top: 24.267%; width: 10.069%; transform: translate(-50%,-50%) rotate(168.77deg) scaleY(-1); }
-.imac { left: 90.004%; top: 79.024%; width: 18.818%; transform: translate(-50%,-50%) rotate(20.72deg); }
-.ibook { left: 8.806%; top: 11.767%; width: 12.710%; transform: translate(-50%,-50%) rotate(15.91deg); }
-.performa { left: 14.694%; top: 79.263%; width: 28.542%; transform: translate(-50%,-50%) rotate(-26.11deg); }
-.cat { left: 66.600%; top: 89.750%; width: 8.452%; transform: translate(-50%,-50%) rotate(21.06deg); }
-.fish-left { left: 6.883%; top: 48.585%; width: 7.708%; transform: translate(-50%,-50%) rotate(24.52deg); }
-.duck { left: 23.125%; top: 90.625%; width: 5.556%; transform: translate(-50%,-50%); }
-.utility-content .mac-button { background: #d9ffef; font-size: 4.108rem; min-width: 9.65rem; min-height: 3.22rem; border-width: 3px; border-radius: 11px; }
-.utility-content .mac-button:hover { background: #b9f6dc; }
-/* Keep interactive panels above decorations when text grows. */
-.mac-window, .desktop-items { position: relative; z-index: 1; }
-@media (min-width: 1101px) {
- .folder-button { margin-left: 2.6rem; margin-top: -.45rem; }
-}
-@media (max-width: 1100px) {
- .homepage { min-height: calc(100vh - 76px); }
- .desktop-art { position: relative; inset: auto; height: auto; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); align-items: center; justify-items: center; gap: 2rem; padding: 2rem 1rem; margin: 2rem auto 0; max-width: 800px; }
- .deco { position: static; width: 85%; max-height: 140px; transform: none; }
- .fish-top { transform: scaleX(-1); }
- .performa { width: 100%; }
- .cat, .duck { width: 60%; }
-}
-@media (max-width: 480px) {
- .desktop-art { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; }
-}
-html.high-contrast .desktop-art { display: none; }
-.utility-content .mac-button { min-width: min(9.65rem, 100%); line-height: .65; }
-.utility-content { padding-bottom: 1rem; }
+/* Allow text enlargement without overflowing narrow cards. */
+.hero h1,.dates,.version,.curator-note,.sticky-titlebar h2,.folder-button span,.utility-content p{overflow-wrap:anywhere;min-width:0}.sticky-titlebar{min-height:23px;height:auto}.sticky-titlebar h2{min-width:0}.folder-button{justify-self:stretch;align-items:center}.folder-button span{max-width:100%}
+.sticky-note{display:flex;flex-direction:column}.sticky-titlebar{flex-shrink:0}.info-shell{flex:1;height:auto;min-height:0}.folder-button{justify-self:start}@media(max-width:900px){.folder-button{justify-self:center}}

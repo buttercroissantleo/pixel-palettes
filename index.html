@@ -1,62 +1,13 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Pixel Palettes: four decades of experimentation, creativity, and art made with computers at Scripps College.">
-  <title>Pixel Palettes — Digital Art at Scripps College</title>
-  <link rel="icon" href="assets/happy-mac.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
-  <script src="assets/moving-gradient.js" defer></script>
-  <script src="script.js" defer></script>
-</head>
-<body class="home">
-  <canvas id="moving-background" aria-hidden="true"></canvas>
-  <canvas id="confetti-canvas" aria-hidden="true" hidden></canvas>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <main id="main" class="homepage" tabindex="-1">
-    <header class="mac-window">
-      <div class="window-inner">
-        <img class="happy-mac" src="assets/happy-mac.svg" alt="">
-        <h1><span>pixel</span> <span>palettes</span><span>.net<span class="visually-hidden"> — Digital Art at Scripps College</span></span></h1>
-        <p class="version">Version 1.0</p>
-      </div>
-    </header>
-    <div class="desktop-items">
-      <button id="confetti-button" class="folder-button" type="button" aria-describedby="confetti-help" hidden>
-        <img src="assets/confetti-folder.svg" width="84" height="84" alt="">
-        <span>Confetti folder</span>
-      </button>
-      <p id="confetti-help" class="visually-hidden">Click to make confetti fall. Motion must be enabled.</p>
-      <aside class="sticky-note" aria-label="About the exhibition">
-        <div class="sticky-titlebar" aria-hidden="true"><img src="assets/sticky-close.svg" alt=""><img src="assets/sticky-zoom.svg" alt=""></div>
-        <p>Explore four decades of experimentation, creativity, and art made with computers @ Scripps College !</p>
-        <img class="sticky-resize" src="assets/sticky-resize.svg" alt="">
-      </aside>
-      <section class="exhibition-window" aria-label="Visit the exhibition">
-        <div class="utility-titlebar" aria-hidden="true"><img src="assets/window-close.svg" alt=""><img src="assets/window-zoom.svg" alt=""></div>
-        <div class="utility-content">
-          <p>Click below to view the exhibition</p>
-          <a class="mac-button" href="exhibition.html">Enter</a>
-        </div>
-      </section>
-    </div>
-    <div class="desktop-art" aria-hidden="true">
-      <img class="deco fish-top" src="assets/goldfish.png" alt="">
-      <img class="deco classic-mac" src="assets/macintosh-128k.png" alt="">
-      <img class="deco imac" src="assets/imac.png" alt="">
-      <img class="deco ibook" src="assets/ibook.png" alt="">
-      <img class="deco performa" src="assets/performa.png" alt="">
-      <img class="deco cat" src="assets/cat.png" alt="">
-      <img class="deco fish-left" src="assets/goldfish.png" alt="">
-      <img class="deco duck" src="assets/duck.png" alt="">
-    </div>
-    <p id="confetti-status" class="visually-hidden" role="status"></p>
-  </main>
-  <footer class="accessibility-controls" aria-label="Display settings" hidden>
-    <button id="motion-toggle" class="motion-toggle" type="button" hidden>Stop motion</button>
-    <button id="accessibility-toggle" type="button" aria-pressed="false" aria-describedby="accessibility-help">Accessibility mode</button>
-    <span id="accessibility-help" class="visually-hidden">Higher contrast and no movement. Your preference is saved on this browser.</span>
-  </footer>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Pixel Palettes: 40 Years of Digital Art at Scripps College, October 21–December 4, 2026."><title>Home — Pixel Palettes</title><link rel="icon" href="assets/happy-mac.svg" type="image/svg+xml"><link rel="preload" href="assets/fonts/FindersKeepers.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css"><script src="settings.js"></script><script src="script.js" defer></script><script src="scrollbars.js" defer></script></head>
+<body class="home"><a class="skip-link" href="#main">Skip to main content</a><canvas id="moving-background" aria-hidden="true"></canvas>
+<canvas id="confetti-canvas" aria-hidden="true" hidden></canvas>
+<main id="main" class="homepage" tabindex="-1">
+<header class="mac-window hero"><div class="window-inner"><img class="happy-mac" src="assets/figma/home-imgHappyMac.svg" alt=""><h1><span>pixel</span> <span>palettes</span><span>.net</span></h1><p class="dates">October 21 - December 4 2026</p><p class="version">Version 1.0</p></div></header>
+<p class="curator-note">Co-curated with Nancy Macko on the occasion of the Scripps College Centennial</p>
+<div class="desktop-items">
+<section class="sticky-note" aria-labelledby="information-title"><div class="sticky-titlebar"><img src="assets/figma/home-imgStickyControlsClose.svg" alt=""><h2 id="information-title">INFORMATION</h2><img src="assets/figma/home-imgStickyControlsZoom.svg" alt=""></div>
+<div class="scroll-shell info-shell" data-scroll-label="Exhibition information"><div class="scroll-viewport" id="information-content" tabindex="0" role="region" aria-labelledby="information-title"><div class="scroll-content"><p>Clark Humanities Museum,<br>Scripps Humanities Building 225,<br>Claremont, CA</p><p>Gallery hours: M-F 8:30am-12:30pm, 1:30-4:30pm.</p><p>Special retrocomputing hours: M/W 12:30-3pm.</p></div></div></div><img class="sticky-resize" src="assets/figma/home-imgStickyControlsReSize.svg" alt=""></section>
+<button id="confetti-button" class="folder-button" type="button" aria-describedby="confetti-help" hidden><img src="assets/confetti-folder.svg" alt="" width="84" height="84"><span>Confetti folder</span></button><p id="confetti-help" class="visually-hidden">Start a five-second confetti shower. Disabled when motion is paused.</p>
+<section class="exhibition-window" aria-label="Visit the exhibition"><div class="utility-titlebar" aria-hidden="true"><img src="assets/figma/home-imgIcon.svg" alt=""><img src="assets/figma/home-imgIcon1.svg" alt=""></div><div class="utility-content"><p>Click below to view the exhibition</p><a class="mac-button enter-button" href="exhibition.html"><span class="button-outline" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Enter</span></a></div></section></div>
+<div class="desktop-art" aria-hidden="true"><img class="deco classic-mac" src="assets/figma/home-imgMacintosh128KTransparency1.png" alt=""><img class="deco imac" src="assets/figma/home-imgIMacWithPpWindow1.png" alt=""><img class="deco ibook" src="assets/figma/home-imgIbook1.png" alt=""><img class="deco performa" src="assets/figma/home-imgMacintoshPerforma450011.png" alt=""></div><p id="confetti-status" class="visually-hidden" role="status"></p></main><footer class="accessibility-controls" aria-label="Display settings" hidden><button class="mac-button" id="accessibility-toggle" type="button" aria-pressed="false" aria-describedby="accessibility-help"><span class="button-outline" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Accessibility mode</span></button><span id="accessibility-help" class="visually-hidden">OpenDyslexic font, generous spacing, a dark green background, and no motion. Your preference is saved on this browser.</span><button class="mac-button" id="motion-toggle" type="button" hidden><span class="button-outline" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Stop motion</span></button></footer></body></html>
